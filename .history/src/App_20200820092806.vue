@@ -6,7 +6,7 @@
 </template>
 
 <style lang="scss">
-@import '../src/style/demo';
+@import '../src/style/changyong';
 *{
   margin: 0;
   padding: 0;
