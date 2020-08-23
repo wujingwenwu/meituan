@@ -1,16 +1,16 @@
-###  获取定位
+###  获取定位0
 
 ```js
 http://localhost:8888/position
 ```
 
-### 获取所有省份
+### 获取所有省份0
 
 ```js
 http://localhost:8888/province
 ```
 
-### 获取省份所有城市
+### 获取省份所有城市0
 
 ``` js
 http://localhost:8888/citys/省份id
@@ -28,7 +28,7 @@ http://localhost:8888/crumbs?city=城市名
 http://localhost:8888/city
 ```
 
-### 热门城市
+### 热门城市0
 
 ``` js
 http://localhost:8888/hotCity
@@ -40,19 +40,19 @@ http://localhost:8888/hotCity
 http://localhost:8888/menu
 ```
 
-### 热门搜索
+### 热门搜索0
 
 ``` js
 http://localhost:8888/hotPlace?city=城市名
 ```
 
-### 搜索建议
+### 搜索建议0
 
 ``` js
 http://localhost:8888/searchTop?city=城市名&input=关键词
 ```
 
-### 根据关键词搜索
+### 根据关键词搜索0
 
 ``` js
 http://localhost:8888/results?city=城市名&keyword=关键词
