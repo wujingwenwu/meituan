@@ -1,0 +1,79 @@
+<template>
+ <div>
+    <page :positions="positions" :username="username"></page>
+    <seach :positions="positions" v-if="positions"></seach>
+    <div class="homes"></div>
+    <Content></Content>
+    <Having :positions="positions" v-if="positions"></Having>
+    <Tail></Tail>
+ </div>
+</template>
+
+<script>
+import page from '../../src/components/page/Page'
+import Seach from '../../src/components/seach/Seach'
+import Content from '../../src/components/content/Content'
+import Having from '../components/having/Having'
+import Tail from '../components/tail/Tail'
+ export default {
+   name:'',
+   props:{
+
+    },
+   data () {
+     return {
+     positions: "",
+     username:''
+   }
+   },
+   components: {
+     page,
+     Seach,
+     Content,
+     Having,
+     Tail,
+   },
+   methods: {
+
+   },
+   mounted() {
+     let city=this.$route.query.city
+     console.log(city);
+     if(city !==undefined){
+       this.positions=city
+     }else{
+          this.$api
+      .position()
+      .then((res) => {
+        let positions = JSON.parse(res.data);
+        this.positions = positions.city;
+        console.log(res);
+        console.log(this.positions);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+     }
+    console.log(this.positions);
+    this.username=this.$route.query.username
+   },
+   watch: {
+
+   },
+   computed: {
+
+   }
+ }
+</script>
+
+<style scoped lang='scss'>
+.homes{
+  box-shadow: 10px 5px 10px #9999;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  right: 0;
+  
+}
+
+</style>
